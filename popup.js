@@ -13,6 +13,7 @@ async function changeFocus(){
             }
         }
         newLast.push(result.focus)
+        alert(result.focus)
         await chrome.storage.local.set({ last: newLast })
         var para = document.createElement("p");
         var node = document.createTextNode(result.focus);

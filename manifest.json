@@ -1,5 +1,5 @@
 {
-    "name": "Hello Extensions of the world!",
+    "name": "FocusSync",
     "description": "Base Level Extension",
     "version": "1.0",
     "manifest_version": 3,
@@ -11,8 +11,8 @@
       {
         "js": ["scripts/content.js"],
         "matches": [
-          "https://developer.chrome.com/docs/extensions/*",
-          "https://developer.chrome.com/docs/webstore/*"
+          "https://*/*",
+          "http://*/*"
         ]
       }
     ],

@@ -1,11 +1,8 @@
 async function updateTime(){
     const result = await chrome.storage.local.get(["focus"])
-    console.log(result.focus)
     if (result.focus == undefined || result.focus == false){
-        console.log("Nothing")
-        // do nothing
+        // nothing
     } else {
-        console.log("increase")
         // increase time
         const time = result.focus;
         if (time[1] == 60){
@@ -28,9 +25,17 @@ setInterval(updateTime, 1000);
 // });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-    alert(tabId)
+
+    if (typeof chrome.tabs.onUpdated === 'undefined') {
+      // chrome.tabs.onUpdated is undefined, so likely this is not a browser context
+      return; 
+    }
+  
+    alert(tabId);
+  
     if (changeInfo.status === 'complete') {
       alert(tabId);
       // existing code
     }
+  
   });
