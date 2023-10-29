@@ -59,13 +59,16 @@ async function windowLoad(){
         button.innerText = "Clear all times"
         button.onclick = async () => {await clearAllTimes();}
         element.appendChild(button)
-        for (let lastScore of last) {
-            const minutes = lastScore[0]
-            const seconds = lastScore[1]
-            var para = document.createElement("p");
-            var node = document.createTextNode(`${minutes} mins ${seconds} secs`);
-            para.appendChild(node);
-            element.appendChild(para);
+        for (let i = 0; i < last.length; i++) {
+            if (i < 9){
+                const lastScore = last[i]
+                const minutes = lastScore[0]
+                const seconds = lastScore[1]
+                var para = document.createElement("p");
+                var node = document.createTextNode(`${minutes} mins ${seconds} secs`);
+                para.appendChild(node);
+                element.appendChild(para);
+            }
         }
     }
 }
