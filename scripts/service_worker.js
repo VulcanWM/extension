@@ -3,7 +3,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
       return; 
     }
     if (changeInfo.status === 'complete') {
-        console.log(tabId)
         chrome.storage.local.get(["focus"]).then((result) => {
             if (result.focus != false){
                 chrome.tabs.remove(tabId); 
